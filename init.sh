@@ -12,8 +12,14 @@ do
 
   echo "---[ Downloading $dataset_name ]---"
 
-  gdown --id ${dataset_ids[$index]} --output .
+  gdown --id ${dataset_ids[$index]} --output $dataset_name
 
   echo "---[ Unzipping $dataset_name ]---"
   unzip $dataset_name -d .
+
+  rm -r $dataset_name
 done
+
+echo "---[ Convert to coco ]---"
+
+python3 face_to_coco.py
