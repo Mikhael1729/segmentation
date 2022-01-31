@@ -1,0 +1,2 @@
+dataset/*
+!dataset/face_to_coco.py
