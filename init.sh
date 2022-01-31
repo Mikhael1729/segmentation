@@ -20,6 +20,17 @@ do
   rm -r $dataset_name
 done
 
-echo "---[ Convert to coco ]---"
+echo "---[ Convert datasets to coco (train and val) ]---"
 
 python3 face_to_coco.py
+
+echo "---[ Download pretrained model ]---"
+
+# Go to detr/weights
+cd ..
+cd detr/
+mkdir weights
+cd weights
+
+# From there https://github.com/facebookresearch/detr 
+wget https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth
