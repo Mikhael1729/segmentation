@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-dataset_ids=("1N1o8yy4ke8IH1ygdCNE6_IVEkhT4MkD1" "1JxzthX7caH2Q8XVzTcWH0fO-z1QmQh7L" "1_iwVbqvPHUztloWsy_ot11wFCgs66GGN" "1_6jBHmCSGRGebG__MmJU8Onmg-2QyJE6")
+dataset_ids=("$WIDER_TRAIN_ID" "$WIDER_VAL_ID"  "$WIDER_TEST_ID" "$WIDER_FACE_SPLIT_ID")
 dataset_names=("WIDER_train.zip" "WIDER_val.zip" "WIDER_test.zip"  "wider_face_split.zip")
-base_dir="segmentation"
+base_dir="$CLONE_DIR"
 dataset_dir="$base_dir/dataset"
 
 mkdir $dataset_dir
