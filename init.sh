@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dataset_ids=("15hGDLhsx8bLgLcIRD5DhYt5iBxnjNF1M" "1GUCogbp16PMGa39thoMMeWxp7Rp5oM8Q" "1HIfDbVEWKmsYKJZm4lchTBDLW5N7dY5T" "1IgM1-ctR6FsveYNZhnh9xSCW_Gucap0a")
+dataset_ids=("1N1o8yy4ke8IH1ygdCNE6_IVEkhT4MkD1" "1JxzthX7caH2Q8XVzTcWH0fO-z1QmQh7L" "1_iwVbqvPHUztloWsy_ot11wFCgs66GGN" "1_6jBHmCSGRGebG__MmJU8Onmg-2QyJE6")
 dataset_names=("WIDER_train.zip" "WIDER_val.zip" "WIDER_test.zip"  "wider_face_split.zip")
 base_dir="segmentation"
 dataset_dir="$base_dir/dataset"
