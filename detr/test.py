@@ -205,7 +205,11 @@ def infer(images_path, model, postprocessors, device, output_path):
             bbox = bbox.reshape((4, 2))
             cv2.polylines(img, [bbox], True, (0, 255, 0), 2)
 
-        img_save_path = os.path.join(output_path, "test_results", filename)
+        img_save_path = os.path.join(output_path, "test_results")
+        if not os.path.exists(img_save_path):
+          os.makedirs(img_save_path)
+
+        img_save_path = os.path.join(img_save_path, filename)
         
         # Store the images instead of showing them immediately
         cv2.imwrite(img_save_path, img) 
