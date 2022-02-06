@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Iterable
 from PIL import Image
 import numpy as np
+from google.colab.patches import cv2_imshow
 
 import torch
 
@@ -204,13 +205,18 @@ def infer(images_path, model, postprocessors, device, output_path):
             bbox = bbox.reshape((4, 2))
             cv2.polylines(img, [bbox], True, (0, 255, 0), 2)
 
-        # img_save_path = os.path.join(output_path, filename)
-        # cv2.imwrite(img_save_path, img)
-        cv2.imshow("img", img)
-        cv2.waitKey()
+        img_save_path = os.path.join(output_path, "test_results", filename)
+        
+        # Store the images instead of showing them immediately
+        cv2.imwrite(img_save_path, img) 
+        # cv2.imshow("img", img)
+
         infer_time = end_t - start_t
         duration += infer_time
+
         print("Processing...{} ({:.3f}s)".format(filename, infer_time))
+        
+        input('Press any key to continue...')
 
     avg_duration = duration / len(images_path)
     print("Avg. Time: {:.3f}s".format(avg_duration))
